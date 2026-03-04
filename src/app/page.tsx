@@ -6,7 +6,7 @@ import {
   ChevronRight, Download, Monitor, ArrowUpRight,
   Code2, Database, Cloud, Shield, Layers, Award,
   Cpu, LayoutGrid, Globe, Server, Network, BrainCircuit,
-  Wrench, ExternalLink, CheckCircle2, BadgeCheck
+  Wrench, ExternalLink, CheckCircle2, BadgeCheck, Menu, X
 } from "lucide-react";
 /* ═══════════════════════════════════════════════════════════════
    DATA — All from chethanalakthilina.vercel.app
@@ -275,6 +275,7 @@ export default function Home() {
   const [typedText, setTypedText] = useState("");
   const [typedText1, setTypedText1] = useState("");
   const [statsVisible, setStatsVisible] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const statsRef = useRef<HTMLDivElement>(null);
 
   // ── Typewriter for hero subtitle ──────────────────────────────
@@ -478,6 +479,14 @@ export default function Home() {
     };
   }, [initSpotlight]);
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isMenuOpen]);
+
   const toggleTheme = () => {
     const t = theme === "dark" ? "light" : "dark";
     setTheme(t);
@@ -503,8 +512,8 @@ export default function Home() {
       </div>
 
       {/* ── NAVIGATION ─────────────────────────────────────── */}
-      <nav className={`ag-nav ${scrolled ? "scrolled" : ""}`} style={{ height: scrolled ? "68px" : "84px" }}>
-        <a href="#home" className="ag-nav-brand">
+      <nav className={`ag-nav ${scrolled ? "scrolled" : ""} ${isMenuOpen ? "menu-open" : ""}`} style={{ height: (scrolled && !isMenuOpen) ? "68px" : "84px" }}>
+        <a href="#home" className="ag-nav-brand" onClick={() => setIsMenuOpen(false)}>
           <div className="ag-nav-logo">CL</div>
           <span className="ag-nav-wordmark"></span>
         </a>
@@ -516,20 +525,24 @@ export default function Home() {
             { id: "skills", label: "Skills" },
             { id: "certifications", label: "Certs" },
           ].map(({ id, label }) => (
-            <a key={id} href={`#${id}`} className={`ag-nav-item ${activeSection === id ? "active" : ""}`}>
+            <a key={id} href={`#${id}`} className={`ag-nav-item ${activeSection === id ? "active" : ""}`} onClick={() => setIsMenuOpen(false)}>
               {label}
             </a>
           ))}
         </div>
 
         <div className="ag-nav-actions">
-
           <button className="ag-icon-btn" onClick={toggleTheme} aria-label="Toggle theme">
             {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
           </button>
-          <a href="mailto:chethanalakthilina3@gmail.com" className="btn btn-primary" style={{ height: "40px", padding: "0 20px", fontSize: "14px" }}>
+
+          <a href="mailto:chethanalakthilina3@gmail.com" className="btn btn-primary hire-me-btn" style={{ height: "40px", padding: "0 20px", fontSize: "14px" }}>
             Hire Me
           </a>
+
+          <button className="ag-icon-btn mobile-menu-btn" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu" style={{ display: "none" }}>
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </nav>
 
@@ -625,7 +638,7 @@ export default function Home() {
             {PROJECTS.filter(p => p.featured).map((p, pIdx) => (
               <div key={p.id} className="col-12 reveal" style={{ marginBottom: "40px" }}>
                 <div className="ag-card-featured">
-                  <div style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: "56px", alignItems: "center" }}>
+                  <div className="featured-project-grid">
                     <div>
                       <span className="card-eyebrow" style={{ color: "var(--accent-blue)" }}>
                         ★ {p.eyebrow}
@@ -743,7 +756,7 @@ export default function Home() {
           style={{ borderTop: "1px solid var(--border-subtle)", borderBottom: "1px solid var(--border-subtle)", background: "var(--bg-surface)" }}
         >
           <div className="ag-section-inner">
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: "80px", alignItems: "start" }}>
+            <div className="experience-grid">
               {/* Left */}
               <div className="reveal" style={{ position: "sticky", top: "104px" }}>
                 <p className="ag-section-label">Career & Education</p>
@@ -796,7 +809,7 @@ export default function Home() {
                   <div className="timeline">
                     <div className="timeline-item">
                       <div className="timeline-dot" style={{ background: "var(--accent-blue)", boxShadow: "0 0 0 2px var(--accent-blue)" }} />
-                      <p className="timeline-meta">2021 – Present</p>
+                      <p className="timeline-meta">2021 – 2025 December</p>
                       <h3 className="timeline-title">BSc (Hons) in Software Engineering</h3>
                       <p className="timeline-org">NSBM Green University, Sri Lanka</p>
                       <p className="timeline-body">
