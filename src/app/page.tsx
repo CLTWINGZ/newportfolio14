@@ -14,6 +14,18 @@ import {
 
 const PROJECTS = [
   {
+    id: "jobnexus",
+    eyebrow: "Enterprise Solution · Laravel 2026",
+    title: "JobNexus — Job Portal System",
+    subtitle: "MVC · DDD Architecture",
+    desc: "A senior-level job portal system with Domain-Driven Design (DDD) architecture. Features enterprise verification, role-based access control, and a cinematic UI.",
+    tags: ["Laravel", "PHP", "DDD", "MySQL", "TailwindCSS"],
+    accent: "blue",
+    icon: Zap,
+    featured: true,
+    link: "https://github.com/CLTWINGZ/New-Job-Portal-System.git",
+  },
+  {
     id: "hotel-cms",
     eyebrow: "Featured Mission · CAASL 2024",
     title: "Aviation-Themed Hotel Management System",
@@ -132,15 +144,55 @@ const SKILLS_BY_CATEGORY = [
 ];
 
 /* Issuer brand config */
-const ISSUERS: Record<string, { color: string; bg: string; abbr: string }> = {
-  "IBM": { color: "#0f62fe", bg: "rgba(15,98,254,0.08)", abbr: "IBM" },
-  "Google Cloud Skills Boost": { color: "#1a73e8", bg: "rgba(26,115,232,0.08)", abbr: "GCP" },
-  "Microsoft": { color: "#00a4ef", bg: "rgba(0,164,239,0.08)", abbr: "MS" },
-  "DeepLearning.AI": { color: "#c9312a", bg: "rgba(201,49,42,0.08)", abbr: "DL" },
-  "KodeKloud": { color: "#326ce5", bg: "rgba(50,108,229,0.08)", abbr: "KK" },
-  "University of Moratuwa": { color: "#8b1a1a", bg: "rgba(139,26,26,0.08)", abbr: "UOM" },
-  "Udemy": { color: "#a435f0", bg: "rgba(164,53,240,0.08)", abbr: "U" },
-  "Peter the Great St. Petersburg Polytechnic University": { color: "#006699", bg: "rgba(0,102,153,0.08)", abbr: "SPbPU" },
+const ISSUERS: Record<string, { color: string; bg: string; abbr: string; logoUrl?: string }> = {
+  "IBM": {
+    color: "#0f62fe",
+    bg: "rgba(15,98,254,0.08)",
+    abbr: "IBM",
+    logoUrl: "https://www.vectorlogo.zone/logos/ibm/ibm-icon.svg"
+  },
+  "Google Cloud Skills Boost": {
+    color: "#1a73e8",
+    bg: "rgba(26,115,232,0.08)",
+    abbr: "GCP",
+    logoUrl: "https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg"
+  },
+  "Microsoft": {
+    color: "#00a4ef",
+    bg: "rgba(0,164,239,0.08)",
+    abbr: "MS",
+    logoUrl: "https://www.vectorlogo.zone/logos/microsoft/microsoft-icon.svg"
+  },
+  "DeepLearning.AI": {
+    color: "#c9312a",
+    bg: "rgba(201,49,42,0.08)",
+    abbr: "DL",
+    logoUrl: "/deeplearning-logo.png"
+  },
+  "KodeKloud": {
+    color: "#326ce5",
+    bg: "rgba(50,108,229,0.08)",
+    abbr: "KK",
+    logoUrl: "/kodekloud-logo.png"
+  },
+  "University of Moratuwa": {
+    color: "#8b1a1a",
+    bg: "rgba(139,26,26,0.08)",
+    abbr: "UOM",
+    logoUrl: "/uom-logo.png"
+  },
+  "Udemy": {
+    color: "#a435f0",
+    bg: "rgba(164,53,240,0.08)",
+    abbr: "U",
+    logoUrl: "https://www.vectorlogo.zone/logos/udemy/udemy-icon.svg"
+  },
+  "Peter the Great St. Petersburg Polytechnic University": {
+    color: "#006699",
+    bg: "rgba(0,102,153,0.08)",
+    abbr: "SPbPU",
+    logoUrl: "/spbpu-logo.png"
+  },
 };
 
 const CERT_GROUPS = [
@@ -200,7 +252,7 @@ const CERT_GROUPS = [
 ];
 
 const STATS = [
-  { value: "6+", label: "Projects Shipped" },
+  { value: "7+", label: "Projects Shipped" },
   { value: "21+", label: "Certifications" },
   { value: "6mo", label: "Production Exp." },
   { value: "∞", label: "Drive" },
@@ -306,16 +358,34 @@ export default function Home() {
     "/caasl-4.png",
     "/caasl-5.png"
   ];
+  const JOBNEXUS_IMAGES = [
+    "/jobnexus-1.png",
+    "/jobnexus-2.png",
+    "/jobnexus-3.png",
+    "/jobnexus-4.png",
+    "/jobnexus-5.png",
+    "/jobnexus-6.png",
+    "/jobnexus-7.png",
+    "/jobnexus-8.png",
+    "/jobnexus-9.png",
+    "/jobnexus-10.png",
+    "/jobnexus-11.png",
+    "/jobnexus-12.png"
+
+
+  ];
   const [currentImageIdx, setCurrentImageIdx] = useState(0);
+  const [jobnexusImageIdx, setJobnexusImageIdx] = useState(0);
   const [showVideo, setShowVideo] = useState(false);
 
   useEffect(() => {
     if (!mounted || showVideo) return;
     const interval = setInterval(() => {
-      setCurrentImageIdx(prev => (prev + 1) % 5); // 5 images max
-    }, 4500); // cycle every 4.5 seconds
+      setCurrentImageIdx(prev => (prev + 1) % 5);
+      setJobnexusImageIdx(prev => (prev + 1) % 12);
+    }, 4500);
     return () => clearInterval(interval);
-  }, [mounted]);
+  }, [mounted, showVideo]);
 
   // ── Card spotlight mouse tracker ──────────────────────────────
   const initSpotlight = useCallback(() => {
@@ -551,93 +621,95 @@ export default function Home() {
 
           <div className="bento-grid" style={{ paddingBottom: "80px" }}>
 
-            {/* ── FEATURED PROJECT ── */}
-            <div className="col-12 reveal">
-              <div className="ag-card-featured">
-                <div style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: "56px", alignItems: "center" }}>
-                  <div>
-                    <span className="card-eyebrow" style={{ color: "var(--accent-blue)" }}>
-                      ★ Featured Mission · CAASL 2024
-                    </span>
-                    <h3 className="card-title-lg">
-                      Aviation-Themed Hotel<br />Management System
-                    </h3>
-                    <p style={{ fontSize: "12px", fontWeight: 700, color: "var(--accent-blue)", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "16px" }}>
-                      AI-Integrated · Full-Stack
-                    </p>
-                    <p className="card-desc" style={{ fontSize: "17px", lineHeight: "1.7" }}>
-                      Full-stack hotel management system built for the Civil Aviation Authority
-                      of Sri Lanka with automated room management, secure authentication,
-                      AI chatbot support via IBM Watson, automated invoicing & email notifications.
-                    </p>
-                    <div className="tag-row">
-                      {["PHP", "JavaScript", "AJAX", "MySQL", "IBM Watson", "AI Chatbot", "Email API"].map(t => (
-                        <span key={t} className="tech-tag">{t}</span>
-                      ))}
+            {/* ── FEATURED PROJECTS ── */}
+            {PROJECTS.filter(p => p.featured).map((p, pIdx) => (
+              <div key={p.id} className="col-12 reveal" style={{ marginBottom: "40px" }}>
+                <div className="ag-card-featured">
+                  <div style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: "56px", alignItems: "center" }}>
+                    <div>
+                      <span className="card-eyebrow" style={{ color: "var(--accent-blue)" }}>
+                        ★ {p.eyebrow}
+                      </span>
+                      <h3 className="card-title-lg">
+                        {p.title}
+                      </h3>
+                      <p style={{ fontSize: "12px", fontWeight: 700, color: "var(--accent-blue)", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "16px" }}>
+                        {p.subtitle}
+                      </p>
+                      <p className="card-desc" style={{ fontSize: "17px", lineHeight: "1.7" }}>
+                        {p.desc}
+                      </p>
+                      <div className="tag-row">
+                        {p.tags.map(t => (
+                          <span key={t} className="tech-tag">{t}</span>
+                        ))}
+                      </div>
+                      <div style={{ display: "flex", gap: "12px", marginTop: "36px" }}>
+                        <a href={p.link || "https://github.com/CLTWINGZ"} target="_blank" rel="noreferrer" className="btn btn-primary btn-sm">
+                          <ExternalLink size={13} /> View Project
+                        </a>
+                      </div>
                     </div>
-                    <div style={{ display: "flex", gap: "12px", marginTop: "36px" }}>
-                      <a href={PROJECTS[0].link || "https://github.com/CLTWINGZ"} target="_blank" rel="noreferrer" className="btn btn-primary btn-sm">
-                        <ExternalLink size={13} /> View Project
-                      </a>
-                    </div>
-                  </div>
-                  <div className="mockup-box">
-                    <div className="browser-chrome">
-                      <div className="chrome-dot" style={{ background: "#EA4335" }} />
-                      <div className="chrome-dot" style={{ background: "#FBBC04" }} />
-                      <div className="chrome-dot" style={{ background: "#34A853" }} />
-                    </div>
-                    <div className="mockup-box-inner" style={{ position: "absolute", top: "32px", left: 0, right: 0, bottom: 0, overflow: "hidden", borderRadius: "0 0 10px 10px", opacity: 1, margin: 0 }}>
-                      {showVideo ? (
-                        <iframe
-                          src="https://drive.google.com/file/d/1KmgMRHmz_VzqAZY7hFW3-pEE7W7cl7v1/preview"
-                          width="100%"
-                          height="100%"
-                          allow="autoplay"
-                          style={{ border: "none", position: "absolute", inset: 0, zIndex: 10 }}
-                        />
-                      ) : (
-                        <>
-                          {CAASL_IMAGES.map((src, idx) => (
-                            <div
-                              key={src}
-                              style={{
-                                position: "absolute",
-                                inset: 0,
-                                opacity: currentImageIdx === idx ? 1 : 0,
-                                transition: "opacity 1s ease-in-out",
-                                zIndex: currentImageIdx === idx ? 1 : 0,
-                                backgroundImage: `url(${src})`,
-                                backgroundSize: "cover",
-                                backgroundPosition: "top center",
-                                backgroundRepeat: "no-repeat"
-                              }}
-                            />
-                          ))}
+                    <div className="mockup-box">
+                      <div className="browser-chrome">
+                        <div className="chrome-dot" style={{ background: "#EA4335" }} />
+                        <div className="chrome-dot" style={{ background: "#FBBC04" }} />
+                        <div className="chrome-dot" style={{ background: "#34A853" }} />
+                      </div>
+                      <div className="mockup-box-inner" style={{ position: "absolute", top: "32px", left: 0, right: 0, bottom: 0, overflow: "hidden", borderRadius: "0 0 10px 10px", opacity: 1, margin: 0 }}>
+                        {p.id === "hotel-cms" && showVideo ? (
+                          <iframe
+                            src="https://drive.google.com/file/d/1KmgMRHmz_VzqAZY7hFW3-pEE7W7cl7v1/preview"
+                            width="100%"
+                            height="100%"
+                            allow="autoplay"
+                            style={{ border: "none", position: "absolute", inset: 0, zIndex: 10 }}
+                          />
+                        ) : (
+                          <>
+                            {(p.id === "hotel-cms" ? CAASL_IMAGES : JOBNEXUS_IMAGES).map((src, idx) => (
+                              <div
+                                key={src}
+                                style={{
+                                  position: "absolute",
+                                  inset: 0,
+                                  opacity: (p.id === "hotel-cms" ? currentImageIdx : jobnexusImageIdx) === idx ? 1 : 0,
+                                  transition: "opacity 1s ease-in-out",
+                                  zIndex: (p.id === "hotel-cms" ? currentImageIdx : jobnexusImageIdx) === idx ? 1 : 0,
+                                  backgroundImage: `url(${src})`,
+                                  backgroundSize: "cover",
+                                  backgroundPosition: "top center",
+                                  backgroundRepeat: "no-repeat"
+                                }}
+                              />
+                            ))}
 
-                          {/* Play Demo Button Overlay */}
-                          <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", zIndex: 5, background: "rgba(0,0,0,0.2)", backdropFilter: "blur(2px)" }}>
-                            <button
-                              onClick={() => setShowVideo(true)}
-                              className="btn btn-primary"
-                              style={{ borderRadius: "100px", padding: "12px 24px", boxShadow: "0 8px 32px rgba(0,0,0,0.4)" }}
-                            >
-                              ▶ Play Demo
-                            </button>
-                          </div>
-                          <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", zIndex: -1, opacity: 0.1 }}>
-                            <Monitor size={80} strokeWidth={0.75} color="var(--accent-blue)" />
-                          </div>
-                        </>
-                      )}
+                            {p.id === "hotel-cms" && (
+                              <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", zIndex: 5, background: "rgba(0,0,0,0.2)", backdropFilter: "blur(2px)" }}>
+                                <button
+                                  onClick={() => setShowVideo(true)}
+                                  className="btn btn-primary"
+                                  style={{ borderRadius: "100px", padding: "12px 24px", boxShadow: "0 8px 32px rgba(0,0,0,0.4)" }}
+                                >
+                                  ▶ Play Demo
+                                </button>
+                              </div>
+                            )}
+
+                            <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", zIndex: -1, opacity: 0.1 }}>
+                              <Monitor size={80} strokeWidth={0.75} color="var(--accent-blue)" />
+                            </div>
+                          </>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            ))}
 
             {/* ── OTHER PROJECTS ── */}
-            {PROJECTS.slice(1).map((p, i) => {
+            {PROJECTS.filter(p => !p.featured).map((p, i) => {
               const Icon = p.icon;
               return (
                 <div key={p.id} className={`col-4 ag-card reveal reveal-delay-${(i % 3) + 1}`}>
@@ -827,12 +899,19 @@ export default function Home() {
                     }}
                   >
                     <div style={{
-                      width: "28px", height: "28px", borderRadius: "8px",
-                      background: brand.color, color: "#fff",
+                      width: "32px", height: "32px", borderRadius: "8px",
+                      background: brand.logoUrl ? "var(--bg-surface)" : brand.color,
+                      color: "#fff",
                       display: "flex", alignItems: "center", justifyContent: "center",
                       fontSize: "10px", fontWeight: 800, letterSpacing: "-0.02em", flexShrink: 0,
+                      padding: brand.logoUrl ? "4px" : "0",
+                      overflow: "hidden"
                     }}>
-                      {brand.abbr}
+                      {brand.logoUrl ? (
+                        <img src={brand.logoUrl} alt={g.issuer} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+                      ) : (
+                        brand.abbr
+                      )}
                     </div>
                     <div>
                       <p style={{ fontSize: "12px", fontWeight: 700, color: brand.color, lineHeight: 1 }}>{g.issuer}</p>
@@ -856,13 +935,21 @@ export default function Home() {
                     {/* Issuer header */}
                     <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "20px" }}>
                       <div style={{
-                        width: "40px", height: "40px", borderRadius: "12px",
-                        background: brand.color, color: "#fff", flexShrink: 0,
+                        width: "44px", height: "44px", borderRadius: "12px",
+                        background: brand.logoUrl ? "var(--bg-surface)" : brand.color,
+                        color: "#fff", flexShrink: 0,
                         display: "flex", alignItems: "center", justifyContent: "center",
                         fontSize: "12px", fontWeight: 800, letterSpacing: "-0.02em",
                         boxShadow: `0 4px 12px ${brand.color}40`,
+                        padding: brand.logoUrl ? "6px" : "0",
+                        overflow: "hidden",
+                        border: brand.logoUrl ? "1px solid var(--border-subtle)" : "none",
                       }}>
-                        {brand.abbr}
+                        {brand.logoUrl ? (
+                          <img src={brand.logoUrl} alt={g.issuer} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+                        ) : (
+                          brand.abbr
+                        )}
                       </div>
                       <div style={{ flex: 1 }}>
                         <p style={{ fontSize: "15px", fontWeight: 700, color: "var(--text-primary)", lineHeight: 1.2 }}>
