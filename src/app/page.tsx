@@ -486,7 +486,6 @@ export default function Home() {
       document.body.style.overflow = "auto";
     }
   }, [isMenuOpen]);
-
   const toggleTheme = () => {
     const t = theme === "dark" ? "light" : "dark";
     setTheme(t);
@@ -543,8 +542,8 @@ export default function Home() {
           <button className="ag-icon-btn mobile-menu-btn" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu" style={{ display: "none" }}>
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
-        </div>
-      </nav>
+        </div >
+      </nav >
 
       <main>
         {/* ── HERO ───────────────────────────────────────────── */}
@@ -1088,6 +1087,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-    </div>
+    </div >
   );
 }
