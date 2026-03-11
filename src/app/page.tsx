@@ -14,6 +14,18 @@ import {
 
 const PROJECTS = [
   {
+    id: "cryptoinsight",
+    eyebrow: "Fintech Intelligence · Gemini 1.5 Pro",
+    title: "Cryptoinsight — AI Trading Bot",
+    subtitle: "90%+ Win Rate · Adaptive Learning",
+    desc: "An institutional-grade crypto trading bot leveraging Gemini 1.5 Pro Vision for chart analysis & vetoing retail traps. Features a self-correcting feedback loop that learns from past misses to synthesize anti-patterns.",
+    tags: ["Next.js", "Python", "Gemini AI", "Supabase", "Order Flow"],
+    accent: "green",
+    icon: Zap,
+    featured: true,
+    link: "https://github.com/CLTWINGZ",
+  },
+  {
     id: "jobnexus",
     eyebrow: "Enterprise Solution · Laravel 2026",
     title: "JobNexus — Job Portal System",
@@ -252,7 +264,7 @@ const CERT_GROUPS = [
 ];
 
 const STATS = [
-  { value: "7+", label: "Projects Shipped" },
+  { value: "8+", label: "Projects Shipped" },
   { value: "21+", label: "Certifications" },
   { value: "6mo", label: "Production Exp." },
   { value: "∞", label: "Drive" },
@@ -372,11 +384,17 @@ export default function Home() {
     "/jobnexus-10.png",
     "/jobnexus-11.png",
     "/jobnexus-12.png"
-
-
+  ];
+  const CRYPTOINSIGHT_IMAGES = [
+    "/cryptoinsight-1.png",
+    "/cryptoinsight-2.png",
+    "/cryptoinsight-3.png",
+    "/cryptoinsight-4.png",
+    "/cryptoinsight-5.png",
   ];
   const [currentImageIdx, setCurrentImageIdx] = useState(0);
   const [jobnexusImageIdx, setJobnexusImageIdx] = useState(0);
+  const [cryptoinsightImageIdx, setCryptoinsightImageIdx] = useState(0);
   const [showVideo, setShowVideo] = useState(false);
 
   useEffect(() => {
@@ -384,6 +402,7 @@ export default function Home() {
     const interval = setInterval(() => {
       setCurrentImageIdx(prev => (prev + 1) % 5);
       setJobnexusImageIdx(prev => (prev + 1) % 12);
+      setCryptoinsightImageIdx(prev => (prev + 1) % 5);
     }, 4500);
     return () => clearInterval(interval);
   }, [mounted, showVideo]);
@@ -679,15 +698,15 @@ export default function Home() {
                           />
                         ) : (
                           <>
-                            {(p.id === "hotel-cms" ? CAASL_IMAGES : JOBNEXUS_IMAGES).map((src, idx) => (
+                            {(p.id === "hotel-cms" ? CAASL_IMAGES : (p.id === "jobnexus" ? JOBNEXUS_IMAGES : CRYPTOINSIGHT_IMAGES)).map((src, idx) => (
                               <div
                                 key={src}
                                 style={{
                                   position: "absolute",
                                   inset: 0,
-                                  opacity: (p.id === "hotel-cms" ? currentImageIdx : jobnexusImageIdx) === idx ? 1 : 0,
+                                  opacity: (p.id === "hotel-cms" ? currentImageIdx : (p.id === "jobnexus" ? jobnexusImageIdx : cryptoinsightImageIdx)) === idx ? 1 : 0,
                                   transition: "opacity 1s ease-in-out",
-                                  zIndex: (p.id === "hotel-cms" ? currentImageIdx : jobnexusImageIdx) === idx ? 1 : 0,
+                                  zIndex: (p.id === "hotel-cms" ? currentImageIdx : (p.id === "jobnexus" ? jobnexusImageIdx : cryptoinsightImageIdx)) === idx ? 1 : 0,
                                   backgroundImage: `url(${src})`,
                                   backgroundSize: "cover",
                                   backgroundPosition: "top center",
