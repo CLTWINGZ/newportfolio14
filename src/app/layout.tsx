@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Chethana Lakthilina | Full-Stack Software Engineer · Sri Lanka",
     description:
-      "Building mission-critical software for aviation, enterprise inventory, AI applications and more. 21+ certifications. Open to opportunities.",
+      "Building mission-critical software for aviation, enterprise inventory, AI applications and more. 26+ certifications. Open to opportunities.",
     type: "website",
     url: "https://chethanalakthilina.vercel.app/",
   },

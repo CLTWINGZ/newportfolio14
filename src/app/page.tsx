@@ -15,11 +15,11 @@ import {
 const PROJECTS = [
   {
     id: "cryptoinsight",
-    eyebrow: "Fintech Intelligence · Gemini 1.5 Pro",
-    title: "Cryptoinsight — AI Trading Bot",
-    subtitle: "90%+ Win Rate · Adaptive Learning",
-    desc: "An institutional-grade crypto trading bot leveraging Gemini 1.5 Pro Vision for chart analysis & vetoing retail traps. Features a self-correcting feedback loop that learns from past misses to synthesize anti-patterns.",
-    tags: ["Next.js", "Python", "Gemini AI", "Supabase", "Order Flow"],
+    eyebrow: "Engineering Excellence · Gemini 1.5 Pro",
+    title: "Cryptoinsight — AI Trading Ecosystem",
+    subtitle: "Real-time Systems · High-Frequency Analysis",
+    desc: "An institutional-grade trading bot leveraging Gemini 1.5 Pro Vision to veto retail traps. Built with a high-performance asynchronous FastAPI backend and React frontend, it features real-time WebSocket signals and complex technical analysis using TA-Lib and Pandas.",
+    tags: ["FastAPI", "React", "Python", "JavaScript", "Pandas", "NumPy", "TA-Lib", "Docker", "Redis", "Supabase"],
     accent: "green",
     icon: Zap,
     featured: true,
@@ -109,19 +109,19 @@ const SKILLS_BY_CATEGORY = [
     label: "Programming Languages",
     icon: Code2,
     accent: "blue",
-    items: ["PHP", "JavaScript", "TypeScript", "Python", "Java", "Dart", "C", "SQL", "AJAX", "Bash"],
+    items: ["PHP", "JavaScript", "TypeScript", "Python", "Java", "C#", "Dart", "C", "SQL", "AJAX", "Bash", "Async Programming"],
   },
   {
     label: "Web & Mobile",
     icon: Globe,
     accent: "red",
-    items: ["React", "Next.js", "Node.js", "Express", "Flutter", "Spring Boot", "Flask", "HTML/CSS"],
+    items: ["React", "Next.js", "Blazor", "FastAPI", "Node.js", "Express", "Flutter", "Spring Boot", "Flask", "HTML/CSS"],
   },
   {
     label: "Databases",
     icon: Database,
     accent: "yellow",
-    items: ["MySQL", "PostgreSQL", "MongoDB", "Firebase", "Redis"],
+    items: ["MySQL", "PostgreSQL", "MongoDB", "Firebase", "Redis", "Supabase"],
   },
   {
     label: "DevOps & Cloud",
@@ -136,10 +136,10 @@ const SKILLS_BY_CATEGORY = [
     items: ["LAN/WAN", "VPN", "Firewalls", "Directory Services", "Server Admin", "Cisco Packet Tracer"],
   },
   {
-    label: "Platforms, CMS & AI",
+    label: "AI, Data Science & Platforms",
     icon: BrainCircuit,
     accent: "red",
-    items: ["IBM Watson", "Google Cloud AI", "Auth0", "WordPress", "Docker Hub", "Git"],
+    items: ["Pandas", "NumPy", "TA-Lib", "IBM Watson", "Google Cloud AI", "Auth0", "Docker Hub", "Git"],
   },
   {
     label: "Developer Tools",
@@ -151,7 +151,7 @@ const SKILLS_BY_CATEGORY = [
     label: "Backend & APIs",
     icon: Server,
     accent: "green",
-    items: ["REST APIs", "JWT Auth", "OAuth 2.0", "WebSockets", "Microservices", "MVC"],
+    items: ["FastAPI", ".NET", "REST APIs", "API Design", "JWT Auth", "WebSockets", "Microservices", "MVC"],
   },
 ];
 
@@ -230,7 +230,14 @@ const CERT_GROUPS = [
   },
   {
     issuer: "Microsoft",
-    certs: ["Foundations of Coding: Full-Stack"],
+    certs: [
+      "Foundations of Coding: Full-Stack",
+      "Introduction to Programming With C#",
+      "Blazor for Front-End Development",
+      "Back-End Development with .NET",
+      "Introduction to Web Development",
+      "Database Integration and Management"
+    ],
   },
   {
     issuer: "DeepLearning.AI",
@@ -263,9 +270,12 @@ const CERT_GROUPS = [
   },
 ];
 
+const TOTAL_CERTS = CERT_GROUPS.reduce((acc, group) => acc + group.certs.length, 0);
+const TOTAL_PROJECTS = PROJECTS.length;
+
 const STATS = [
-  { value: "8+", label: "Projects Shipped" },
-  { value: "21+", label: "Certifications" },
+  { value: `${TOTAL_PROJECTS}+`, label: "Projects Shipped" },
+  { value: `${TOTAL_CERTS}+`, label: "Certifications" },
   { value: "6mo", label: "Production Exp." },
   { value: "∞", label: "Drive" },
 ];
@@ -566,77 +576,92 @@ export default function Home() {
 
       <main>
         {/* ── HERO ───────────────────────────────────────────── */}
-        <section id="home" className="ag-hero">
-          <div className="ag-hero-eyebrow">
+        <section id="home" className="ag-hero ag-hero-split">
+
+          {/* ── EYEBROW ── */}
+          <div className="ag-hero-eyebrow" style={{ alignSelf: "center", marginBottom: "32px" }}>
             <span className="ag-hero-eyebrow-dot" />
             Open to Opportunities ·{" "}
             <span style={{ color: "var(--accent-blue)" }}>{typedText}</span>
             <span className="typewriter-cursor" />
           </div>
 
-          <h1 className="ag-hero-title">
-            {" "}
-            <span className="gradient-text"><span style={{ color: "var(--accent-blue)" }}>{typedText1}</span>
-              <span className="typewriter-cursor" /></span>
-            <br />
+          {/* ── TOP: Titles & Photo ── */}
+          <div className="ag-hero-row-top">
+            <div className="ag-hero-titles">
 
+              <h1 className="ag-hero-title">
+                {" "}
+                <span className="gradient-text"><span style={{ color: "var(--accent-blue)" }}>{typedText1}</span>
+                  <span className="typewriter-cursor" /></span>
+                <br />
+              </h1>
 
-          </h1>
+              <p className="ag-hero-subtitle" style={{ marginTop: "16px" }}>
+                <strong>Chethana Lakthilina Jathunarachchi</strong> — Software Engineering graduate
+                specializing in full-stack development, AI integration, DevOps, and
+                enterprise infrastructure that defies the ordinary.
+              </p>
+            </div>
 
-          <p className="ag-hero-subtitle">
-            <strong>Chethana Lakthilina Jathunarachchi</strong> — Software Engineering graduate
-            specializing in full-stack development, AI integration, DevOps, and
-            enterprise infrastructure that defies the ordinary.
-          </p>
-
-          <div className="ag-hero-cta">
-            <a href="#projects" className="btn btn-primary">
-              View My Work <ChevronRight size={16} />
-            </a>
-            <a href="https://www.overleaf.com/read/svtckzqczvpt#6b8332" target="_blank" rel="noreferrer" className="btn btn-secondary">
-              <Download size={15} /> View CV
-            </a>
-            <a href="https://github.com/CLTWINGZ" target="_blank" rel="noreferrer" className="btn btn-secondary">
-              <Github size={15} /> GitHub
-            </a>
-          </div>
-
-          <div className="ag-stats-bar" ref={statsRef}>
-            {STATS.map(s => (
-              <div key={s.label} className="ag-stat">
-                <div className="ag-stat-value">{s.value}</div>
-                <div className="ag-stat-label">{s.label}</div>
+            <div className="ag-hero-photo-wrap">
+              {/* Floating availability badge */}
+              <div className="profile-badge profile-badge-top">
+                <span className="profile-badge-dot" />
+                Available for work
               </div>
-            ))}
+
+              {/* Animated gradient ring */}
+              <div className="profile-ring-outer">
+                <div className="profile-ring-inner">
+                  <img
+                    src="/rmvbg.png"
+                    alt="Chethana Lakthilina Jathunarachchi"
+                    className="profile-img"
+                  />
+                </div>
+              </div>
+
+              {/* Floating tech badge bottom-left */}
+              <div className="profile-badge profile-badge-bottom">
+                <Code2 size={13} />
+                Full-Stack · AI · DevOps
+              </div>
+            </div>
           </div>
 
-          {/* Hero tag strip */}
+          {/* ── MIDDLE & BOTTOM: Centered Buttons & Stats ── */}
+          <div className="ag-hero-row-middle" style={{ flexDirection: "column", gap: "32px", alignItems: "center" }}>
+            <div className="profile-actions">
+              <a href="#projects" className="btn btn-primary">
+                View My Work <ChevronRight size={16} />
+              </a>
+              <a href="https://www.overleaf.com/read/svtckzqczvpt#6b8332" target="_blank" rel="noreferrer" className="btn btn-secondary">
+                <Download size={15} /> View CV
+              </a>
+              <a href="https://github.com/CLTWINGZ" target="_blank" rel="noreferrer" className="btn btn-secondary">
+                <Github size={15} /> GitHub
+              </a>
+            </div>
+
+            <div className="ag-hero-stats-wrap" style={{ width: "100%", maxWidth: "600px" }}>
+              <div className="profile-stats" ref={statsRef}>
+                {STATS.map(s => (
+                  <div key={s.label} className="ag-stat">
+                    <div className="ag-stat-value">{s.value}</div>
+                    <div className="ag-stat-label">{s.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
           {/* Scroll cue */}
           <div className="scroll-cue" onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}>
             <span>Scroll</span>
             <div className="scroll-cue-line" />
           </div>
-
-          <div style={{ marginTop: "40px", display: "flex", gap: "10px", justifyContent: "center", flexWrap: "wrap", animation: "hero-in 1s var(--ease-out) 0.75s both" }}>
-            {[
-              { label: "Full-Stack", sub: "React · Node · PHP" },
-              { label: "CI/CD", sub: "GitHub Actions · Pages" },
-              { label: "DevOps", sub: "Docker · K8s · Jenkins" },
-            ].map(item => (
-              <div key={item.label} style={{
-                background: "var(--bg-surface)",
-                border: "1px solid var(--border-subtle)",
-                borderRadius: "var(--radius-md)",
-                padding: "12px 20px",
-                textAlign: "center",
-                boxShadow: "var(--shadow-sm)"
-              }}>
-                <div style={{ fontSize: "13px", fontWeight: 700, color: "var(--text-primary)" }}>{item.label}</div>
-                <div style={{ fontSize: "11px", color: "var(--text-muted)", marginTop: "2px" }}>{item.sub}</div>
-              </div>
-            ))}
-          </div>
         </section>
+
 
         {/* ── PROJECTS ───────────────────────────────────────── */}
         <section id="projects" className="ag-section">
@@ -906,7 +931,7 @@ export default function Home() {
             <div className="ag-section-header reveal">
               <p className="ag-section-label">Licenses & Certifications</p>
               <h2 className="ag-section-title">
-                <span className="gradient-text">21+</span> credentials earned.
+                <span className="gradient-text">{TOTAL_CERTS}+</span> credentials earned.
               </h2>
               <p className="ag-section-desc">
                 Verified certifications from IBM, Google, Microsoft, DeepLearning.AI, and leading universities.
