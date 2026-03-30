@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef, useCallback } from "react";
+import Image from "next/image";
 import {
   Search, Zap, Github, Linkedin, Mail, Sun, Moon,
   ChevronRight, Download, Monitor, ArrowUpRight,
@@ -614,10 +615,13 @@ export default function Home() {
               {/* Animated gradient ring */}
               <div className="profile-ring-outer">
                 <div className="profile-ring-inner">
-                  <img
+                  <Image
                     src="/rmvbg.png"
                     alt="Chethana Lakthilina Jathunarachchi"
                     className="profile-img"
+                    width={200}
+                    height={200}
+                    priority
                   />
                 </div>
               </div>

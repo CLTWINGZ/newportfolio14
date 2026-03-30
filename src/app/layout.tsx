@@ -34,12 +34,37 @@ export const metadata: Metadata = {
     "DevOps Engineer",
     "Docker Kubernetes Jenkins",
   ],
+  authors: [{ name: "Chethana Lakthilina Jathunarachchi", url: "https://chethanalakthilina.vercel.app/" }],
+  creator: "Chethana Lakthilina Jathunarachchi",
+  publisher: "Chethana Lakthilina Jathunarachchi",
+  metadataBase: new URL("https://chethanalakthilina.vercel.app"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Chethana Lakthilina | Full-Stack Software Engineer · Sri Lanka",
     description:
       "Building mission-critical software for aviation, enterprise inventory, AI applications and more. 26+ certifications. Open to opportunities.",
     type: "website",
     url: "https://chethanalakthilina.vercel.app/",
+    siteName: "Chethana Lakthilina Portfolio",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Chethana Lakthilina | Full-Stack Software Engineer",
+    description: "Building mission-critical software for aviation, enterprise inventory, AI applications and more.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -48,9 +73,30 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Chethana Lakthilina Jathunarachchi",
+    url: "https://chethanalakthilina.vercel.app/",
+    jobTitle: "Full-Stack Software Engineer",
+    alumniOf: "NSBM Green University",
+    worksFor: {
+      "@type": "Organization",
+      name: "Civil Aviation Authority of Sri Lanka (CAASL)"
+    },
+    sameAs: [
+      "https://github.com/CLTWINGZ",
+      "https://www.linkedin.com/in/chethana-jathunarachchi-2ba45b281/"
+    ],
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${outfit.variable}`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
       </body>
     </html>
