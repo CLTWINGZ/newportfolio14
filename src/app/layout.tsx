@@ -41,6 +41,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: "/rmvbg.png",
+    apple: "/rmvbg.png",
+  },
   openGraph: {
     title: "Chethana Lakthilina | Full-Stack Software Engineer · Sri Lanka",
     description:
