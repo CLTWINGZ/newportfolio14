@@ -152,7 +152,7 @@ const SKILLS_BY_CATEGORY = [
     label: "Backend & APIs",
     icon: Server,
     accent: "green",
-    items: ["FastAPI", ".NET", "REST APIs", "API Design", "JWT Auth", "WebSockets", "Microservices", "MVC"],
+    items: ["FastAPI", ".NET", "REST APIs", "API Design", "Security & Authentication", "JWT Auth", "RBAC", "WebSockets", "Microservices", "MVC"],
   },
 ];
 
@@ -237,7 +237,9 @@ const CERT_GROUPS = [
       "Blazor for Front-End Development",
       "Back-End Development with .NET",
       "Introduction to Web Development",
-      "Database Integration and Management"
+      "Database Integration and Management",
+      "Security and Authentication",
+      "Full-Stack Integration"
     ],
   },
   {
