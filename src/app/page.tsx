@@ -24,7 +24,7 @@ const PROJECTS = [
     accent: "green",
     icon: Zap,
     featured: true,
-    link: "https://github.com/CLTWINGZ",
+    link: "https://cryptoinsigh.vercel.app/",
   },
   {
     id: "jobnexus",
@@ -99,9 +99,20 @@ const PROJECTS = [
     title: "Online Prison Rehabilitation System",
     subtitle: "Backend Management",
     desc: "Backend system to manage rehabilitation activities with monitoring capabilities, reporting dashboards, and activity tracking.",
-    tags: ["Java", "Spring Boot", "MySQL", "REST API"],
+    tags: ["C#", "ASP.net", "SQL Server", "REST API"],
     accent: "red",
     icon: Shield,
+  },
+  {
+    id: "customer-cms",
+    eyebrow: "Enterprise System",
+    title: "Customer Management System",
+    subtitle: "Full-Stack Web App",
+    desc: "A robust customer management system featuring advanced search, numeric pagination, bulk asynchronous file processing, and precise state management.",
+    tags: ["React", "Spring Boot", "Java", "REST API"],
+    accent: "blue",
+    icon: Server,
+    link: "https://github.com/CLTWINGZ"
   },
 ];
 
