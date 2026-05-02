@@ -114,6 +114,17 @@ const PROJECTS = [
     icon: Server,
     link: "https://github.com/CLTWINGZ"
   },
+  {
+    id: "event-manager",
+    eyebrow: "Enterprise Solution · .NET",
+    title: ".NET Event Manager",
+    subtitle: "Full-Stack Security Integration",
+    desc: "A secure event management system with RBAC, input validation, and XSS/SQL injection prevention. Features CRUD for user management, middleware logging, and automated security testing.",
+    tags: ["C#", ".NET Core", "Blazor", "SQL Server", "REST API"],
+    accent: "red",
+    icon: Shield,
+    link: "https://github.com/CLTWINGZ/dotnet4.git"
+  },
 ];
 
 const SKILLS_BY_CATEGORY = [
