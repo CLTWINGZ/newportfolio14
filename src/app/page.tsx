@@ -1131,7 +1131,7 @@ export default function Home() {
                         const Tag = isLink ? "a" : "div";
                         return (
                           <Tag
-                            key={cert.name}
+                            key={`${g.issuer}-${cert.name}-${ci}`}
                             href={isLink ? cert.url : undefined}
                             target={isLink ? "_blank" : undefined}
                             rel={isLink ? "noreferrer" : undefined}
