@@ -125,6 +125,50 @@ const PROJECTS = [
     icon: Shield,
     link: "https://github.com/CLTWINGZ/dotnet4.git"
   },
+  {
+    id: "dealer-evaluation",
+    eyebrow: "Microservices · IBM Cloud",
+    title: "Dealer Evaluation System",
+    subtitle: "Cloud Native Architecture",
+    desc: "A distributed system featuring microservices for product details (Python) and dealer pricing (Node.js), deployed on IBM Cloud Code Engine with a unified frontend.",
+    tags: ["Microservices", "IBM Cloud", "Node.js", "Python", "Docker"],
+    accent: "blue",
+    icon: Server,
+    link: "https://github.com/CLTWINGZ"
+  },
+  {
+    id: "guestbook-k8s",
+    eyebrow: "DevOps · Kubernetes",
+    title: "Cloud Native Guestbook",
+    subtitle: "Container Orchestration",
+    desc: "A scalable guestbook application deployed on Kubernetes with HPA, rolling updates, and automated rollbacks. Features multi-container pod architectures and persistent storage.",
+    tags: ["Kubernetes", "Docker", "HPA", "CI/CD", "Cloud Native"],
+    accent: "green",
+    icon: Layers,
+    link: "https://github.com/CLTWINGZ"
+  },
+  {
+    id: "tax-devops",
+    eyebrow: "CI/CD · Tekton",
+    title: "Tax Calculator DevOps Pipeline",
+    subtitle: "Automated Lifecycle Management",
+    desc: "Modernized a legacy tax calculator into a containerized app with a robust Tekton CI/CD pipeline for automated testing, building, and deployment to cloud environments.",
+    tags: ["Tekton", "DevOps", "Docker", "CI/CD", "Node.js"],
+    accent: "red",
+    icon: Zap,
+    link: "https://github.com/CLTWINGZ/final-4.git"
+  },
+  {
+    id: "travel-explorer",
+    eyebrow: "Web Development · React",
+    title: "Global Travel Explorer",
+    subtitle: "Search & Discovery Engine",
+    desc: "A travel recommendation platform featuring destination discovery for beaches, temples, and countries with integrated search and responsive design.",
+    tags: ["React", "JavaScript", "REST API", "Responsive Design"],
+    accent: "yellow",
+    icon: Globe,
+    link: "https://github.com/CLTWINGZ/final-ajax.git"
+  },
 ];
 
 const SKILLS_BY_CATEGORY = [
@@ -228,70 +272,95 @@ const ISSUERS: Record<string, { color: string; bg: string; abbr: string; logoUrl
     abbr: "SPbPU",
     logoUrl: "/spbpu-logo.png"
   },
+  "SkillUp": {
+    color: "#ff4b2b",
+    bg: "rgba(255,75,43,0.08)",
+    abbr: "SU",
+    logoUrl: "https://www.vectorlogo.zone/logos/coursera/coursera-icon.svg"
+  },
 };
 
 const CERT_GROUPS = [
   {
     issuer: "IBM",
     certs: [
-      "Introduction to Software Engineering",
-      "Developing Front-End Apps with React",
-      "Developing Back-End Apps with Node.js & Express",
-      "Developing AI Applications with Python and Flask",
-      "Python for Data Science, AI & Development",
-      "Introduction to Cloud Computing",
-      "Getting Started with Git and GitHub",
-      "Hands-On Introduction to Linux Commands & Shell Scripting",
+      { name: "Node.js & MongoDB: Developing Back-end Database Applications", url: "https://www.coursera.org/account/accomplishments/records/PSERBGBDVYPW" },
+      { name: "JavaScript Programming Essentials", url: "https://www.coursera.org/account/accomplishments/records/7X7U6NVPGV5T" },
+      { name: "Django Application Development with SQL and Databases", url: "https://www.coursera.org/account/accomplishments/records/YDGU1376JODH" },
+      { name: "Introduction to Containers w/ Docker, Kubernetes & OpenShift", url: "https://www.coursera.org/account/accomplishments/records/1YJSCUKH0AEA" },
+      { name: "Application Development using Microservices and Serverless", url: "https://www.coursera.org/account/accomplishments/verify/YFIQTCYV00RZ" },
+      { name: "Get Started with Cloud Native, DevOps, Agile, and NoSQL", url: "https://www.coursera.org/account/accomplishments/records/JNI9UB2ABZ8O" },
+      { name: "Introduction to Software Engineering", url: "https://www.coursera.org/account/accomplishments/certificate/TEYVGPXEU5UN" },
+      { name: "Developing Front-End Apps with React", url: "https://www.coursera.org/account/accomplishments/records/1K108M55GVK0" },
+      { name: "Developing Back-End Apps with Node.js & Express", url: "https://www.coursera.org/account/accomplishments/verify/GUTEOULFXA26" },
+      { name: "Developing AI Applications with Python and Flask", url: "https://www.coursera.org/account/accomplishments/verify/AOTHF6P6HVPR" },
+      { name: "Python for Data Science, AI & Development", url: "https://www.coursera.org/account/accomplishments/records/1SGGHL638T32" },
+      { name: "Introduction to Cloud Computing", url: "https://www.coursera.org/account/accomplishments/records/7CWP06083H1C" },
+      { name: "Getting Started with Git and GitHub", url: "https://www.coursera.org/account/accomplishments/verify/F7Z41MYSOCMJ" },
+      { name: "Hands-On Introduction to Linux Commands & Shell Scripting", url: "https://www.coursera.org/account/accomplishments/records/BRT4TSA3E9ES" },
+      { name: "Foundations of Computer Networking", url: "https://www.coursera.org/account/accomplishments/verify/FE4K9SLU0EHE" },
+    ],
+  },
+  {
+    issuer: "SkillUp",
+    certs: [
+      { name: "Get Started with iOS App Development", url: "https://www.coursera.org/account/accomplishments/records/4YQ0JX5IXHCA" }
     ],
   },
   {
     issuer: "Google Cloud Skills Boost",
     certs: [
-      "Introduction to Generative AI",
-      "Data Analytics on Google Cloud",
+      { name: "Introduction to Generative AI", url: "https://www.cloudskillsboost.google/course_templates/536/badge" },
+      { name: "Data Analytics on Google Cloud", url: "https://www.cloudskillsboost.google/paths/18/course_templates/578/badge" },
     ],
   },
   {
     issuer: "Microsoft",
     certs: [
-      "Foundations of Coding: Full-Stack",
-      "Introduction to Programming With C#",
-      "Blazor for Front-End Development",
-      "Back-End Development with .NET",
-      "Introduction to Web Development",
-      "Database Integration and Management",
-      "Security and Authentication",
-      "Full-Stack Integration"
+      { name: "Foundations of Coding: Full-Stack", url: "https://www.coursera.org/account/accomplishments/records/D5SKKBXIMXUL" },
+      { name: "Introduction to Programming With C#", url: "https://www.coursera.org/account/accomplishments/records/ENB8CCO59V4Z" },
+      { name: "Blazor for Front-End Development", url: "https://www.coursera.org/account/accomplishments/records/DXZUNNNHDKIP" },
+      { name: "Back-End Development with .NET", url: "https://www.coursera.org/account/accomplishments/records/C6UOWGT4C0M2" },
+      { name: "Introduction to Web Development", url: "https://www.coursera.org/account/accomplishments/records/RJURT5O18YKV" },
+      { name: "Database Integration and Management", url: "https://www.coursera.org/account/accomplishments/records/L4XW6RDIHISO" },
+      { name: "Security and Authentication", url: "https://www.coursera.org/account/accomplishments/records/GETMTC7L1449" },
+      { name: "Full-Stack Integration", url: "https://www.coursera.org/account/accomplishments/verify/1PA5LRZLFEJA" }
     ],
   },
   {
     issuer: "DeepLearning.AI",
-    certs: ["Supervised Machine Learning: Regression & Classification"],
+    certs: [
+      { name: "Supervised Machine Learning: Regression & Classification", url: "https://coursera-certificate-images.s3.amazonaws.com/QP439O3KFYTC" }
+    ],
   },
   {
     issuer: "KodeKloud",
     certs: [
-      "DevOps Prerequisite Course",
-      "Jenkins for Beginners",
-      "Docker Basics for DevOps",
-      "Kubernetes Basics for DevOps",
+      { name: "DevOps Prerequisite Course", url: "https://www.coursera.org/account/accomplishments/records/VFYLFKB7O4EV" },
+      { name: "Jenkins for Beginners", url: "https://www.coursera.org/account/accomplishments/records/SBCBK6JOL6DO" },
+      { name: "Docker Basics for DevOps", url: "https://www.coursera.org/account/accomplishments/records/2DJMO5FKIZWQ" },
+      { name: "Kubernetes Basics for DevOps", url: "https://www.coursera.org/account/accomplishments/records/8VT2DP0FZV4H" },
     ],
   },
   {
     issuer: "University of Moratuwa",
     certs: [
-      "Web Design for Beginners",
-      "Python for Beginners",
-      "Front-End Web Development",
+      { name: "Introduction to Programming Using Web Appliaction", url: "https://open.uom.lk/lms/mod/customcert/view.php?id=697&downloadown=1" },
+      { name: "Introduction to Programming Using Python", url: "https://open.uom.lk/lms/mod/customcert/view.php?id=675&downloadown=1" },
+      { name: "Front-End Web Development", url: "https://open.uom.lk/lms/mod/customcert/view.php?id=697&downloadown=1" },
     ],
   },
   {
     issuer: "Udemy",
-    certs: ["Practical Cisco Networking Labs in Cisco Packet Tracer"],
+    certs: [
+      { name: "Practical Cisco Networking Labs in Cisco Packet Tracer", url: "https://www.udemy.com/certificate/UC-869b6820-1ea4-483f-b89a-215ff9b8096d/" }
+    ],
   },
   {
     issuer: "Peter the Great St. Petersburg Polytechnic University",
-    certs: ["Web Development with Java Spring Framework"],
+    certs: [
+      { name: "Web Development with Java Spring Framework", url: "" }
+    ],
   },
 ];
 
@@ -1057,35 +1126,48 @@ export default function Home() {
 
                     {/* Cert list */}
                     <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
-                      {g.certs.map((cert, ci) => (
-                        <div
-                          key={cert}
-                          style={{
-                            display: "flex", alignItems: "center", gap: "8px",
-                            padding: "7px 14px",
-                            borderRadius: "var(--radius-sm)",
-                            background: "var(--bg-raised)",
-                            border: "1px solid var(--border-subtle)",
-                            cursor: "default",
-                            transition: "all 0.2s var(--ease-smooth)",
-                          }}
-                          onMouseEnter={e => {
-                            (e.currentTarget as HTMLElement).style.background = brand.bg;
-                            (e.currentTarget as HTMLElement).style.borderColor = `${brand.color}50`;
-                            (e.currentTarget as HTMLElement).style.transform = "translateY(-1px)";
-                          }}
-                          onMouseLeave={e => {
-                            (e.currentTarget as HTMLElement).style.background = "";
-                            (e.currentTarget as HTMLElement).style.borderColor = "";
-                            (e.currentTarget as HTMLElement).style.transform = "";
-                          }}
-                        >
-                          <BadgeCheck size={14} color={brand.color} style={{ flexShrink: 0 }} />
-                          <span style={{ fontSize: "13px", fontWeight: 500, color: "var(--text-primary)" }}>
-                            {cert}
-                          </span>
-                        </div>
-                      ))}
+                      {g.certs.map((cert, ci) => {
+                        const isLink = !!cert.url;
+                        const Tag = isLink ? "a" : "div";
+                        return (
+                          <Tag
+                            key={cert.name}
+                            href={isLink ? cert.url : undefined}
+                            target={isLink ? "_blank" : undefined}
+                            rel={isLink ? "noreferrer" : undefined}
+                            style={{
+                              display: "flex", alignItems: "center", gap: "8px",
+                              padding: "7px 14px",
+                              borderRadius: "var(--radius-sm)",
+                              background: "var(--bg-raised)",
+                              border: "1px solid var(--border-subtle)",
+                              cursor: isLink ? "pointer" : "default",
+                              textDecoration: "none",
+                              transition: "all 0.2s var(--ease-smooth)",
+                            }}
+                            onMouseEnter={e => {
+                              if (isLink) {
+                                (e.currentTarget as HTMLElement).style.background = brand.bg;
+                                (e.currentTarget as HTMLElement).style.borderColor = `${brand.color}50`;
+                                (e.currentTarget as HTMLElement).style.transform = "translateY(-1px)";
+                              }
+                            }}
+                            onMouseLeave={e => {
+                              if (isLink) {
+                                (e.currentTarget as HTMLElement).style.background = "";
+                                (e.currentTarget as HTMLElement).style.borderColor = "";
+                                (e.currentTarget as HTMLElement).style.transform = "";
+                              }
+                            }}
+                          >
+                            <BadgeCheck size={14} color={brand.color} style={{ flexShrink: 0 }} />
+                            <span style={{ fontSize: "13px", fontWeight: 500, color: "var(--text-primary)" }}>
+                              {cert.name}
+                            </span>
+                            {isLink && <ArrowUpRight size={12} style={{ opacity: 0.4, color: "var(--text-muted)" }} />}
+                          </Tag>
+                        );
+                      })}
                     </div>
                   </div>
                 );
