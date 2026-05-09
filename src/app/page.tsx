@@ -167,7 +167,7 @@ const PROJECTS = [
     tags: ["React", "JavaScript", "REST API", "Responsive Design"],
     accent: "yellow",
     icon: Globe,
-    link: "https://github.com/CLTWINGZ/final-ajax.git"
+    link: "https://cltwingz.github.io/final-ajax/index.html"
   },
 ];
 
