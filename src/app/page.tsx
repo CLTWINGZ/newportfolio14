@@ -15,6 +15,30 @@ import {
 
 const PROJECTS = [
   {
+    id: "roamquest",
+    eyebrow: "Web Application Development · 2026",
+    title: "RoamQuest – Responsive Travel Booking & Trip Plan",
+    subtitle: "Real-time Web Application · Search Engine Optimization(SEO) ",
+    desc: "Designed and developed a modern responsive spa and wellness website with desktop, tablet, and mobile optimization. Features include service booking, staff showcase, testimonials, contact forms, modern UI/UX, and responsive layouts for all devices.",
+    tags: ["Next Js", "TypeScript",],
+    accent: "green",
+    icon: Zap,
+    featured: true,
+    link: "https://github.com/CLTWINGZ/",
+  },
+  {
+    id: "aura",
+    eyebrow: "Web Application Development · 2026",
+    title: "Aura & Zen – Responsive Spa & Wellness Website",
+    subtitle: "Real-time Web Application · Search Engine Optimization(SEO) ",
+    desc: "Designed and developed a modern responsive spa and wellness website with desktop, tablet, and mobile optimization. Features include service booking, staff showcase, testimonials, contact forms, modern UI/UX, and responsive layouts for all devices.",
+    tags: ["Next Js", "TypeScript",],
+    accent: "green",
+    icon: Zap,
+    featured: true,
+    link: "https://github.com/CLTWINGZ/",
+  },
+  {
     id: "cryptoinsight",
     eyebrow: "Engineering Excellence · Gemini 1.5 Pro",
     title: "Cryptoinsight — AI Trading Ecosystem",
@@ -25,6 +49,30 @@ const PROJECTS = [
     icon: Zap,
     featured: true,
     link: "https://cryptoinsigh.vercel.app/",
+  },
+  {
+    id: "inventorybiz",
+    eyebrow: "Core Engineering",
+    title: "Small Business Inventory System",
+    subtitle: "Full-Stack Web App",
+    desc: "Full-stack inventory web app with JWT auth, CRUD operations, real-time stock updates, responsive UI and analytics dashboards.",
+    tags: ["React", "Node.js", "Express", "JWT", "MongoDB"],
+    accent: "yellow",
+    icon: Layers,
+    featured: true,
+    link: "https://small-bussiness-inventory6.vercel.app/",
+  },
+   {
+    id: "travelbloom",
+    eyebrow: "Web Development · React",
+    title: "Global Travel Explorer",
+    subtitle: "Search & Discovery Engine",
+    desc: "A travel recommendation platform featuring destination discovery for beaches, temples, and countries with integrated search and responsive design.",
+    tags: ["React", "JavaScript", "REST API", "Responsive Design"],
+    accent: "yellow",
+    icon: Globe,
+    featured: true,
+    link: "https://cltwingz.github.io/final-ajax/index.html"
   },
   {
     id: "jobnexus",
@@ -51,27 +99,19 @@ const PROJECTS = [
     link: "https://drive.google.com/file/d/1KmgMRHmz_VzqAZY7hFW3-pEE7W7cl7v1/view",
   },
   {
-    id: "inventory-caasl",
-    eyebrow: "Enterprise Infrastructure",
+    id: "caaslinventory",
+    eyebrow: "Enterprise Infrastructure · CAASL 2024",
     title: "Inventory Management System",
     subtitle: "CAASL IT Unit",
     desc: "Asset registration, monitoring, and automated reporting dashboards for IT inventory management at the Civil Aviation Authority of Sri Lanka.",
     tags: ["PHP", "JavaScript", "MySQL", "AJAX"],
-    accent: "red",
-    icon: Database,
+    accent: "blue",
+    icon: Monitor,
+    featured: true,
     link: "https://www.linkedin.com/posts/chethana-jathunarachchi-2ba45b281_php-javascript-bootstrap-activity-7248674565084590081-yGqS?utm_source=share&utm_medium=member_desktop&rcm=ACoAAESWoO4BLTUAIjH4mZcsoTEXjUn2XvibmZY",
   },
-  {
-    id: "inventory-biz",
-    eyebrow: "Core Engineering",
-    title: "Small Business Inventory System",
-    subtitle: "Full-Stack Web App",
-    desc: "Full-stack inventory web app with JWT auth, CRUD operations, real-time stock updates, responsive UI and analytics dashboards.",
-    tags: ["React", "Node.js", "Express", "JWT", "MongoDB"],
-    accent: "yellow",
-    icon: Layers,
-    link: "https://small-bussiness-inventory6.vercel.app/",
-  },
+ 
+  
   {
     id: "weather",
     eyebrow: "Data Intelligence",
@@ -158,17 +198,7 @@ const PROJECTS = [
     icon: Zap,
     link: "https://github.com/CLTWINGZ/final-4.git"
   },
-  {
-    id: "travel-explorer",
-    eyebrow: "Web Development · React",
-    title: "Global Travel Explorer",
-    subtitle: "Search & Discovery Engine",
-    desc: "A travel recommendation platform featuring destination discovery for beaches, temples, and countries with integrated search and responsive design.",
-    tags: ["React", "JavaScript", "REST API", "Responsive Design"],
-    accent: "yellow",
-    icon: Globe,
-    link: "https://cltwingz.github.io/final-ajax/index.html"
-  },
+ 
 ];
 
 const SKILLS_BY_CATEGORY = [
@@ -476,8 +506,8 @@ export default function Home() {
     "/caasl-5.png"
   ];
   const JOBNEXUS_IMAGES = [
+    "/jobnexus.png",
     "/jobnexus-1.png",
-    "/jobnexus-2.png",
     "/jobnexus-3.png",
     "/jobnexus-4.png",
     "/jobnexus-5.png",
@@ -490,15 +520,52 @@ export default function Home() {
     "/jobnexus-12.png"
   ];
   const CRYPTOINSIGHT_IMAGES = [
+   
     "/cryptoinsight-1.png",
-    "/cryptoinsight-2.png",
-    "/cryptoinsight-3.png",
     "/cryptoinsight-4.png",
     "/cryptoinsight-5.png",
   ];
+  const AURA_IMAGES = [
+    "/aura-zen-mockup.png",
+    "/aura-zen-mockup2.png.png"
+  
+  ];
+  const ROAMQUEST_IMAGES = [
+    "/roamquest-1.png.png"
+ 
+  ];
+  const caaslinventory_IMAGES =[
+    "/caaslinventory-1.png",
+    "/caaslinventory-2.png",
+    "/caaslinventory-3.png",
+    "/caaslinventory-4.png",
+    "/caaslinventory-5.png"
+
+  ];
+  const inventorybiz_IMAGES = [
+    "/inventorybiz-1.png",
+    "/inventorybiz-2.png",      
+    "/inventorybiz-3.png",
+    "/inventorybiz-4.png",
+    "/inventorybiz-5.png",
+
+  ];
+   const travelbloom_IMAGES = [
+    "/travelbloom-1.png",
+    "/travelbloom-2.png",      
+    "/travelbloom-3.png",
+    "/travelbloom-4.png",
+    "/travelbloom-5.png",
+
+   ];                                             
   const [currentImageIdx, setCurrentImageIdx] = useState(0);
   const [jobnexusImageIdx, setJobnexusImageIdx] = useState(0);
   const [cryptoinsightImageIdx, setCryptoinsightImageIdx] = useState(0);
+  const [auraImageIdx, setAuraImageIdx] = useState(0);
+  const [roamquestImageIdx, setRoamquestImageIdx] = useState(0);
+  const [caaslinventoryImageIdx, setCaaslinventoryImageIdx] = useState(0);
+  const [inventorybizImageIdx, setInventorybizImageIdx] = useState(0);
+  const [travelbloomImageIdx, setTravelbloomImageIdx] = useState(0);
   const [showVideo, setShowVideo] = useState(false);
 
   useEffect(() => {
@@ -506,7 +573,12 @@ export default function Home() {
     const interval = setInterval(() => {
       setCurrentImageIdx(prev => (prev + 1) % 5);
       setJobnexusImageIdx(prev => (prev + 1) % 12);
-      setCryptoinsightImageIdx(prev => (prev + 1) % 5);
+      setCryptoinsightImageIdx(prev => (prev + 1) % 3);
+      setAuraImageIdx(prev => (prev + 1) % 2);
+      setRoamquestImageIdx(prev => (prev + 1) % 1);
+      setCaaslinventoryImageIdx(prev => (prev + 1) % 5);
+      setInventorybizImageIdx(prev => (prev + 1) % 5);
+      setTravelbloomImageIdx(prev => (prev + 1) % 5);
     }, 4500);
     return () => clearInterval(interval);
   }, [mounted, showVideo]);
@@ -820,19 +892,72 @@ export default function Home() {
                           />
                         ) : (
                           <>
-                            {(p.id === "hotel-cms" ? CAASL_IMAGES : (p.id === "jobnexus" ? JOBNEXUS_IMAGES : CRYPTOINSIGHT_IMAGES)).map((src, idx) => (
+
+                            {(
+                              p.id === "hotel-cms"
+                                ? CAASL_IMAGES
+                                : p.id === "jobnexus"
+                                  ? JOBNEXUS_IMAGES
+                                  : p.id === "aura"
+                                    ? AURA_IMAGES
+                                    : p.id === "roamquest"
+                                      ? ROAMQUEST_IMAGES
+                                      : p.id === "caaslinventory"
+                                        ? caaslinventory_IMAGES
+                                        : p.id === "inventorybiz"
+                                          ? inventorybiz_IMAGES
+                                          : p.id === "travelbloom"
+                                            ? travelbloom_IMAGES
+                                            : CRYPTOINSIGHT_IMAGES
+                            ).map((src, idx) => (
                               <div
                                 key={src}
                                 style={{
                                   position: "absolute",
                                   inset: 0,
-                                  opacity: (p.id === "hotel-cms" ? currentImageIdx : (p.id === "jobnexus" ? jobnexusImageIdx : cryptoinsightImageIdx)) === idx ? 1 : 0,
+                                  opacity:
+                                    (
+                                      p.id === "hotel-cms"
+                                        ? currentImageIdx
+                                        : p.id === "jobnexus"
+                                          ? jobnexusImageIdx
+                                          : p.id === "aura"
+                                            ? auraImageIdx
+                                            : p.id === "roamquest"
+                                              ? roamquestImageIdx
+                                              : p.id === "caaslinventory"
+                                                ? caaslinventoryImageIdx
+                                                : p.id === "inventorybiz"
+                                                  ? inventorybizImageIdx
+                                                  : p.id === "travelbloom"
+                                                    ? travelbloomImageIdx
+                                                    : cryptoinsightImageIdx
+                                    ) === idx
+                                      ? 1
+                                      : 0,
                                   transition: "opacity 1s ease-in-out",
-                                  zIndex: (p.id === "hotel-cms" ? currentImageIdx : (p.id === "jobnexus" ? jobnexusImageIdx : cryptoinsightImageIdx)) === idx ? 1 : 0,
+                                  zIndex:
+                                    (
+                                      p.id === "hotel-cms"
+                                        ? currentImageIdx
+                                        : p.id === "jobnexus"
+                                          ? jobnexusImageIdx
+                                          : p.id === "aura"
+                                            ? auraImageIdx
+                                            : p.id === "roamquest"
+                                              ? roamquestImageIdx
+                                              :p.id === "caaslinventory"
+                                                ? caaslinventoryImageIdx 
+                                                :p.id === "inventorybiz"
+                                                  ? inventorybizImageIdx
+                                                  :cryptoinsightImageIdx
+                                    ) === idx
+                                      ? 1
+                                      : 0,
                                   backgroundImage: `url(${src})`,
                                   backgroundSize: "cover",
                                   backgroundPosition: "top center",
-                                  backgroundRepeat: "no-repeat"
+                                  backgroundRepeat: "no-repeat",
                                 }}
                               />
                             ))}
