@@ -201,6 +201,49 @@ const PROJECTS = [
  
 ];
 
+const FIVERR_GIGS = [
+  {
+    id: "fiverr-custom-website",
+    title: "Custom Website Development",
+    subtitle: "Tailor-made Web Solutions",
+    desc: "Performant, high-quality, custom-tailored websites designed specifically to match your unique brand identity and user workflow. Built from scratch with clean, modular code.",
+    img: "/fiverr-custom-website.png",
+    tags: ["React", "Next.js", "PHP", "Node.js", "Spring Boot", "MySQL", "Docker", "Vercel"],
+    accent: "red",
+    link: "https://www.fiverr.com/s/AyN8mpR"
+  },
+  {
+    id: "fiverr-erp-crm",
+    title: "ERP & CRM System Development",
+    subtitle: "Enterprise Workflow Automation",
+    desc: "Bespoke ERP and CRM platforms designed to automate business operations, track inventory/sales, organize client relations, and provide rich data analytics dashboards.",
+    img: "/fiverr-erp-crm.png",
+    tags: ["React", "Next.js", "Spring Boot", "Node.js", "MySQL", "MongoDB", "JWT Auth", "Vercel"],
+    accent: "yellow",
+    link: "https://www.fiverr.com/s/pd7LKl8"
+  },
+  {
+    id: "fiverr-full-stack",
+    title: "Full-Stack Website Development",
+    subtitle: "End-to-End Core Engineering",
+    desc: "Robust full-stack development marrying high-fidelity frontend aesthetics with secure, scalable, and responsive API backends for absolute product integrity.",
+    img: "/fiverr-full-stack.png",
+    tags: ["React", "Next.js", "PHP", "Node.js", "Spring Boot", "MySQL", "MongoDB", "JWT Auth"],
+    accent: "blue",
+    link: "https://www.fiverr.com/s/0bp82eq"
+  },
+  {
+    id: "fiverr-business-website",
+    title: "Modern Business Website",
+    subtitle: "SEO & Conversion Optimized",
+    desc: "Sleek, lightning-fast business websites with SEO-friendly structure, rich responsive layouts, modern micro-interactions, and conversion-optimized funnels.",
+    img: "/fiverr-business-website.png",
+    tags: ["Next.js", "React", "TailwindCSS", "SEO Friendly", "PHP", "Node.js", "Vercel"],
+    accent: "green",
+    link: "https://www.fiverr.com/s/AyN8mdq"
+  }
+];
+
 const SKILLS_BY_CATEGORY = [
   {
     label: "Programming Languages",
@@ -615,7 +658,7 @@ export default function Home() {
         }
       });
 
-      const ids = ["home", "projects", "experience", "skills", "certifications"];
+      const ids = ["home", "projects", "services", "experience", "skills", "certifications"];
       for (const id of ids) {
         const rect = document.getElementById(id)?.getBoundingClientRect();
         if (rect && rect.top < window.innerHeight * 0.45 && rect.bottom > window.innerHeight * 0.45) {
@@ -715,6 +758,7 @@ export default function Home() {
         <div className="ag-nav-links">
           {[
             { id: "projects", label: "Projects" },
+            { id: "services", label: "Services" },
             { id: "experience", label: "Experience" },
             { id: "skills", label: "Skills" },
             { id: "certifications", label: "Certs" },
@@ -1011,6 +1055,47 @@ export default function Home() {
                 </div>
               );
             })}
+          </div>
+        </section>
+
+        {/* ── SERVICES / FIVERR GIGS ─────────────────────────── */}
+        <section id="services" className="ag-section" style={{ borderTop: "1px solid var(--border-subtle)" }}>
+          <div className="ag-section-inner">
+            <div className="ag-section-header reveal">
+              <p className="ag-section-label">Fiverr Gigs & Services</p>
+              <h2 className="ag-section-title">Hire Me on Fiverr.</h2>
+              <p className="ag-section-desc">
+                High-performance custom web development, ERP/CRM engineering, and modern business websites built for speed, security, and top-tier SEO.
+              </p>
+            </div>
+            
+            <div className="bento-grid" style={{ padding: 0 }}>
+              {FIVERR_GIGS.map((gig, idx) => (
+                <div key={gig.id} className={`col-6 ag-card reveal reveal-delay-${(idx % 2) + 1}`} style={{ display: "flex", flexDirection: "column", height: "100%", padding: "24px" }}>
+                  <div className="gig-image-wrap" style={{ position: "relative", width: "100%", aspectRatio: "1.414/1", borderRadius: "var(--radius-sm)", overflow: "hidden", marginBottom: "20px", border: "1px solid var(--border-subtle)" }}>
+                    <Image
+                      src={gig.img}
+                      alt={gig.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      style={{ objectFit: "cover", transition: "transform 0.5s var(--ease-smooth)" }}
+                      className="gig-img"
+                    />
+                  </div>
+                  <span className="card-eyebrow" style={{ color: `var(--accent-${gig.accent})` }}>{gig.subtitle}</span>
+                  <h3 className="card-title" style={{ marginTop: "4px", marginBottom: "12px", fontSize: "20px" }}>{gig.title}</h3>
+                  <p className="card-desc" style={{ fontSize: "14px", flexGrow: 1 }}>{gig.desc}</p>
+                  <div className="tag-row" style={{ marginBottom: "24px", marginTop: "12px" }}>
+                    {gig.tags.map(t => (
+                      <span key={t} className="tech-tag">{t}</span>
+                    ))}
+                  </div>
+                  <a href={gig.link} target="_blank" rel="noreferrer" className="btn btn-primary" style={{ width: "100%", justifyContent: "center", gap: "8px", background: "var(--btn-primary-bg)", color: "var(--btn-primary-fg)" }}>
+                    Order on Fiverr <ArrowUpRight size={15} />
+                  </a>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
